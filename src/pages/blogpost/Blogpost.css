@@ -1,0 +1,26 @@
+.blog-post {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+}
+
+.reading, .return-link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 1rem;
+}
+
+.reading svg, .return-link svg {
+    vertical-align: middle;
+}
+
+.caretLeft {
+    color: var(--color-spring-green);
+}

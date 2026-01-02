@@ -1,0 +1,54 @@
+section {
+    background-color: var(--color-platinum);
+    padding-top: 10px;
+    width: 100%;
+    min-height: 100vh;
+
+}
+
+.outer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+label {
+    font-weight: 600;
+    color: var(--color-charcoal);
+    margin-top: 1rem;
+}
+
+input, textarea {
+    border-radius: 3px;
+    border: 0.05rem solid lightgrey;
+    text-indent: 0.3rem;
+}
+
+input {
+    padding: 0.8rem 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+.new-post-button {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.message {
+    color: firebrick;
+}

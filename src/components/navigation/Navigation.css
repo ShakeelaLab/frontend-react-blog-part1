@@ -1,0 +1,44 @@
+nav {
+    background-color: var(--color-jet-black);
+    color: var(--color-platinum);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.company-logo {
+    width: 250px;
+    margin-left: 1.5rem;
+}
+
+nav > ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 500px;
+    list-style: none;
+    margin-right: 50px;
+}
+
+li {
+    font-weight: 800;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+    color: var(--color-platinum);
+}
+
+nav a:hover {
+    color: var(--color-spring-green);
+}
+
+.active-menu-link {
+    border-bottom: 1px solid var(--color-platinum);
+}
+
+.default-menu-link {
+    border-bottom: none;
+}
