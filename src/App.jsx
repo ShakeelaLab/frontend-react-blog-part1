@@ -13,6 +13,7 @@ function App() {
     return (
         <>
             <Navigation />
+            <main>
             <Routes>
                 <Route path="/" element={<Home />}/>
                 <Route path="/allposts" element={<AllPosts />}/>
@@ -20,6 +21,7 @@ function App() {
                 <Route path="/allposts/:postId" element={<Blogpost />} />
                 <Route path="*" element={<NotFound />}/>
             </Routes>
+            </main>
         </>
     )
 }

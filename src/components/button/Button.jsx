@@ -1,13 +1,15 @@
 import './Button.css';
 import React from "react";
 
-function Button({onClick,text,type,className}) {
+function Button({onClick,text,type,className,loading}) {
     return (
         <>
             <button
                 className={className}
                 type={type}
-                onClick={onClick}>
+                onClick={onClick}
+                disabled={loading}
+            >
                 {text}
             </button>
         </>

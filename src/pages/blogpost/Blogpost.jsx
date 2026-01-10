@@ -10,8 +10,10 @@ function Blogpost() {
     const [postInfo, setPostInfo] = React.useState(null);
     const {postId} = useParams();
     const [error, setError] = React.useState(false);
+    const [loading, toggleLoading] = React.useState(false);
 
     async function fetchPostInfo() {
+        toggleLoading(true);
         try {
             setError(false);
             const response = await axios.get('https://novi-backend-api-wgsgz.ondigitalocean.app/api/blogposts', {
@@ -27,6 +29,8 @@ function Blogpost() {
         } catch (error) {
             console.error(error);
             setError(true);
+        } finally {
+            toggleLoading(false);
         }
     }
 
@@ -43,6 +47,8 @@ function Blogpost() {
           {/*    text="Haal info*/}
           {/*      op"*/}
           {/*/>*/}
+
+            {loading ? <p className="loading-status">Aan het laden...</p> : null}
             {postInfo &&
                 <article className="blog-post">
                     <h1>{postInfo.title}</h1>
@@ -52,7 +58,7 @@ function Blogpost() {
 
                     <div className="reading">
                         <Clock size={22} />
-                            <span>{postInfo.readTime} minuten lezen</span> </div>
+                            <span>{postInfo.readTime} {postInfo.readTime < 2 ? 'minuut lezen' : 'minuten lezen'}</span> </div>
                     <p>{postInfo.content}</p>
                     <span
                         className="comments-shares"><p>{postInfo.comments} reacties -</p><p> {postInfo.shares} keer gedeeld</p></span>
