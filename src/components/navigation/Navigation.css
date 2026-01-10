@@ -5,6 +5,10 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
 }
 
 .company-logo {

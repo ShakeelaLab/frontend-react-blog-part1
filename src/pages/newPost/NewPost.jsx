@@ -2,20 +2,36 @@ import './NewPost.css';
 import Button from "../../components/button/Button.jsx";
 import { useForm } from 'react-hook-form';
 import {readTime} from "../../helpers/helpers.jsx";
+import axios from "axios";
+import React from "react";
 
 function NewPost() {
     const { register, handleSubmit, formState: {errors}  } = useForm();
+    const [postSubmitted, setPostSubmitted] = React.useState('');
 
-    function handleFormSubmit(data) {
-        const allData = {
-            ...data,
-            created: new Date().toISOString(),
-            readTime: readTime(data.content),
-            comments: 0,
-            shares: 0,
-        }
+   async function handleFormSubmit(data) {
 
-        console.log(allData);
+       try {
+           const response = await axios.post('https://novi-backend-api-wgsgz.ondigitalocean.app/api/blogposts', {
+                       ...data,
+                       "created": new Date().toISOString(),
+                       "readTime": readTime(data.content),
+                       "comments": 0,
+                       "shares": 0,
+           },
+               {headers: {
+                       'novi-education-project-id': 'fc3b1d4e-24cf-4767-8ccb-fce51b54f7f8',
+
+               }
+       });
+           console.log(response);
+           console.log('Nieuwe post is gelukt')
+           setPostSubmitted(response);
+           } catch (error) {
+           console.error(error);
+           console.log('Er is iets misgegaan, probeer het nog eens')
+       }
+
     }
 
     return (
@@ -93,6 +109,7 @@ function NewPost() {
                         />
                     </div>
                 </form>
+                {postSubmitted && <p>Je blog is geplaatst</p>}
             </section>
 
         </>

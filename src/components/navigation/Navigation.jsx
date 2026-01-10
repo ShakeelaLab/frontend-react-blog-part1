@@ -3,6 +3,8 @@ import logomedium from "../../assets/logo-medium.png";
 import {NavLink} from "react-router-dom";
 
 function Navigation() {
+    const getActiveClass = ({ isActive }) => isActive ? "active-menu-link" : "default-menu-link";
+
     return (
         <>
             <nav>
@@ -10,21 +12,21 @@ function Navigation() {
                 <ul>
                     <li>
                         <NavLink
-                            className={({ isActive }) => isActive ? 'active-menu-link' : 'default-menu-link'}
+                            className={getActiveClass}
                             to="/">
                             Home
                         </NavLink>
                         </li>
                     <li>
                         <NavLink
-                            className={({ isActive }) => isActive ? 'active-menu-link' : 'default-menu-link'}
+                            className={getActiveClass}
                             to="allposts">
                         Alle posts
                         </NavLink>
                     </li>
                     <li>
                         <NavLink
-                            className={({ isActive }) => isActive ? 'active-menu-link' : 'default-menu-link'}
+                            className={getActiveClass}
                             to="newpost">
                         Nieuwe post maken
                         </NavLink>
