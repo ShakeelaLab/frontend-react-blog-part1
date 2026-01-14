@@ -2,7 +2,6 @@ import './Blogpost.css';
 import {Link, useParams} from "react-router-dom";
 import React, {useEffect} from "react";
 import {formatDutchDate } from "../../helpers/helpers.jsx";
-import Button from "../../components/button/Button.jsx";
 import {Clock, CaretLeft} from "@phosphor-icons/react";
 import axios from "axios";
 
@@ -16,16 +15,16 @@ function Blogpost() {
         toggleLoading(true);
         try {
             setError(false);
-            const response = await axios.get('https://novi-backend-api-wgsgz.ondigitalocean.app/api/blogposts', {
+            const response = await axios.get(`https://novi-backend-api-wgsgz.ondigitalocean.app/api/blogposts/${postId}`, {
                 headers: {
                     'novi-education-project-id': 'fc3b1d4e-24cf-4767-8ccb-fce51b54f7f8',
                 },
             });
-            const responseData = response.data.find((post) => {
-                return post.id === Number(postId);
-            });
+            // const responseData = response.data.find((post) => {
+            //     return post.id === Number(postId);
+            // });
             console.log(response);
-            setPostInfo({ ...responseData, dutchDate: formatDutchDate(response.created), });
+            setPostInfo({ ...response.data, dutchDate: formatDutchDate(response.data.created), });
         } catch (error) {
             console.error(error);
             setError(true);

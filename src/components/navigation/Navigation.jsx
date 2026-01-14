@@ -3,7 +3,7 @@ import logomedium from "../../assets/logo-medium.png";
 import {NavLink} from "react-router-dom";
 
 function Navigation() {
-    const getActiveClass = ({ isActive }) => isActive ? "active-menu-link" : "default-menu-link";
+    const getActiveClass = ( isActive ) => isActive ? "active-menu-link" : "default-menu-link";
 
     return (
         <>

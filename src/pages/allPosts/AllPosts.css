@@ -16,7 +16,7 @@ section {
 
 .blog-list li {
     background-color: whitesmoke;
-    padding: 20px 20px;
+    padding: 20px;
     border-radius: 4px;
     box-shadow: .25rem .5rem 1rem 0 rgba(0, 0, 0, 0.1);
     width: calc(75% - 20px);
