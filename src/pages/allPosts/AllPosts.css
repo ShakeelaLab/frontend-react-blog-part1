@@ -1,0 +1,49 @@
+section {
+    background-color: var(--color-platinum);
+    padding-top: 10px;
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 2rem;
+}
+
+.blog-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.blog-list li {
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: .25rem .5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    width: calc(75% - 20px);
+    max-width: 600px;
+}
+
+.article-link {
+    text-decoration: none;
+    color: var(--color-spring-green);
+}
+
+.title-author, .comments-shares {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.title-author p, .comments-shares p {
+    font-weight: 300;
+}
+
+.comments-shares{
+    gap: 5px;
+}
+
+.loading-status {
+    text-align: center;
+    padding-top: 6rem;
+    font-size: 3rem;
+}

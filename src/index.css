@@ -1,10 +1,10 @@
-/*In dit bestand plaats je alle algemene styling die geldt voor de gehele applicatie*/
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 :root {
-  --color-primary: #38E991;
-  --color-secondary: #2C2F39;
-  --color-tertiary: #50535C;
-  --color-white: #FFFFFF;
+  --color-jet-black: #2c2f39;
+  --color-charcoal: #50535C;
+  --color-spring-green: #38E991;
+  --color-platinum: #E8E9ED;
+  --color-pearl-beige: #FFEBC6;
 }
 
 * {

@@ -1,0 +1,38 @@
+.outer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+header {
+    background-color: var(--color-jet-black);
+}
+
+.header-white-logo {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--color-jet-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-white-logo > img {
+    margin: 100px 0 50px 0;
+    width: 600px;
+    max-width: 100%;
+}
+
+
+h2 {
+    display: flex;
+    justify-content: center;
+    color: var(--color-jet-black);
+    font-size: 2.1rem;
+}
+
+.text-billboard {
+    text-align: right;
+}
